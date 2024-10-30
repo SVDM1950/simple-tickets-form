@@ -1,0 +1,25 @@
+{
+  "name": "simple-tickets-form",
+  "description": "Simple tickets form for Publii",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/svdm1950/simple-tickets-form",
+  "authors": [
+    "Valgard Trontheim <https://trontheim.com/>"
+  ],
+  "dependencies": {
+    "@jimp/custom": "0.22.10",
+    "@jimp/plugin-cover": "0.22.10",
+    "@jimp/plugin-resize": "0.22.10",
+    "@jimp/plugin-scale": "0.22.10",
+    "@jimp/types": "0.22.10",
+    "fs-extra": "^11.2.0",
+    "image-size": "1.0.2",
+    "normalize-path": "3.0.0",
+    "sharp": "^0.33.5",
+    "slug": "0.9.4",
+    "sync-fetch": "^0.5.2",
+    "transliteration": "2.3.5"
+  },
+  "devDependencies": {}
+}

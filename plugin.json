@@ -1,0 +1,100 @@
+{
+  "name": "Simple Tickets Form",
+  "description": "Simple Tickets Form",
+  "license": "MIT",
+  "author": "Valgard Trontheim <https://trontheim.com/>",
+  "version": "1.0.0",
+  "scope": "site",
+  "minimumPubliiVersion": "0.46.0",
+  "useCustomCssForOptions": false,
+  "config": [
+    {
+      "name": "script",
+      "label": "URL endpoint to mailing script",
+      "note": "",
+      "group": "Backend",
+      "type": "text",
+      "default": "https://example.com/tickets"
+    },
+    {
+      "name": "script_events",
+      "label": "URL endpoint to get events",
+      "note": "",
+      "group": "Backend",
+      "type": "text",
+      "default": "https://example.com//tickets/events"
+    },
+    {
+      "name": "script_tickets",
+      "label": "URL endpoint to get tickets",
+      "note": "",
+      "group": "Backend",
+      "type": "text",
+      "default": "https://example.com/tickets/tickets"
+    },
+    {
+      "name": "menu",
+      "label": "Menu",
+      "note": "",
+      "group": "Menu",
+      "type": "text",
+      "default": "footerMenu"
+    },
+    {
+      "name": "menuPosition",
+      "label": "Menu position",
+      "note": "",
+      "group": "Menu",
+      "type": "text",
+      "default": "1"
+    },
+    {
+      "name": "ticketsFeaturedImage",
+      "label": "Featured image",
+      "note": "",
+      "group": "Content",
+      "type": "upload",
+      "default": null
+    },
+    {
+      "name": "ticketsContent",
+      "label": "Content",
+      "note": "",
+      "group": "Content",
+      "type": "wysiwyg",
+      "default": null
+    },
+    {
+      "name": "recaptchaEnabled",
+      "label": "Enabled",
+      "note": "",
+      "group": "Google reCAPTCHA v3",
+      "type": "checkbox",
+      "default": false
+    },
+    {
+      "name": "recaptchaSiteKey",
+      "label": "Site key",
+      "note": "",
+      "group": "Google reCAPTCHA v3",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "name": "recaptchaParameterName",
+      "label": "Parameter name",
+      "note": "",
+      "group": "Google reCAPTCHA v3",
+      "type": "text",
+      "default": "g-recaptcha-response"
+    },
+    {
+      "name": "recaptchaActionName",
+      "label": "Action name",
+      "note": "",
+      "group": "Google reCAPTCHA v3",
+      "type": "text",
+      "default": "TICKETS_FORM"
+    }
+  ]
+}
