@@ -76,7 +76,7 @@ class SimpleTicketsForm {
     generateTicketsForm(rendererInstance, output, globalContext, context) {
         this.rendererInstance = rendererInstance;
 
-        if (rendererInstance.menuContext.length !== 1 || rendererInstance.menuContext[0] !== 'frontpage') {
+        if (this.rendererInstance.menuContext.length !== 1 || (rendererInstance.menuContext[0] !== 'frontpage' && rendererInstance.menuContext[0] !== 'blogpage')) {
             return output;
         }
 
