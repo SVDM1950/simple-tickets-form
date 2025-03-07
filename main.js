@@ -16,6 +16,7 @@ class SimpleTicketsForm {
     addModifiers() {
         this.API.addModifier('menuStructure', this.modifyMenuStructure, 2, this);
         this.API.addModifier('htmlOutput', this.generateTicketsForm, 2, this);
+        this.API.addModifier('htmlOutput', this.replaceInternalLink, 1, this);
     }
 
     modifyMenuStructure(rendererInstance, output) {
@@ -125,6 +126,28 @@ class SimpleTicketsForm {
         this.saveOutputFile(pageSlug + suffix, content);
 
         this.rendererInstance.menuContext = oldMenuContext
+
+        return output;
+    }
+
+    replaceInternalLink(rendererInstance, output, globalContext, context) {
+        this.rendererInstance = rendererInstance;
+
+        let menu = this.config['menu'].split('/').map(menuItem => menuItem.trim());
+        menu.shift(); // Remove main menu item
+
+        const translations = this.rendererInstance.translations.user.tickets ?? this.rendererInstance.translations.theme.tickets;
+
+        let ticketsSlug = [menu.join('/'), translations.menu.slug].join('/');
+
+        let url = '#INTERNAL_LINK#/tickets';
+        let link = this.rendererInstance.siteConfig.domain + '/' + ticketsSlug;
+
+        if (this.rendererInstance.previewMode || this.rendererInstance.siteConfig.advanced.urls.addIndex) {
+            link = link + '/index.html';
+        }
+
+        output = output.split(url).join(link);
 
         return output;
     }
